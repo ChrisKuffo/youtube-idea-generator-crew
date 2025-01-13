@@ -1,10 +1,13 @@
+# Task to filter comments that can inspire new video content
 filter_comments_task:
   description: >
+    # Describes the purpose of the task: to identify actionable comments
     Identify and filter actionable comments that can serve as video ideas.
     The goal is to keep only comments that can potentially inspire new content,
     especially requests, suggestions, or questions directly related to video topics.
     Here are some examples to guide you:
 
+    # Example input to illustrate the type of comments processed
     Input:
     [
       [
@@ -27,22 +30,26 @@ filter_comments_task:
       ]
     ]
 
+    # Explanation of which comments should be returned
     In this example, only the first comment should be returned, as it represents a request for a new video.
     The other comments are positive feedback but not actionable for new content creation.
     Also, filter out spam or irrelevant comments.
     Additionally, ensure that the comments are unique and not duplicates.
     Finally, make sure the comment could be a potential video idea.
 
+    # Placeholder for actual comments to be analyzed
     Here are the comments that you need to analyze:
     {comments}
 
   expected_output: >
+    # Describes the expected output format
     Return an array of actionable comments, each containing:
     - video_title
     - comment
     - video_id
     - comment_id
 
+    # Example output to illustrate the expected result
     Example Output:
     [
       [
@@ -52,13 +59,17 @@ filter_comments_task:
         "comment_id": "abc"
       ]
     ]
+  # Specifies the agent responsible for this task
   agent: comment_filter_agent
 
+# Task to generate video ideas from actionable comments
 generate_video_ideas_task:
   description: >
+    # Describes the purpose of the task: to convert comments into video ideas
     Convert each actionable comment into a video idea with a structured title and description.
     Include the original comment details as well for reference.
 
+    # Example input to illustrate the type of comments processed
     Input Example:
     [
       [
@@ -69,15 +80,18 @@ generate_video_ideas_task:
       ]
     ]
 
+    # Instruction to generate a title and description from the input
     From this input, generate a title and description that could guide video creation.
 
   expected_output: >
+    # Describes the expected output format
     Each actionable comment should be transformed into an object containing:
     - video_title: A descriptive title for the video idea.
     - description: A brief summary explaining what the video will cover.
     - video_id: The original video_id from the input.
     - comment_id: The original comment_id from the input.
 
+    # Example output to illustrate the expected result
     Example Output:
     [
       [
@@ -87,14 +101,18 @@ generate_video_ideas_task:
         "comment_id": "abc"
       ]
     ]
+  # Specifies the agent responsible for this task
   agent: video_idea_generator_agent
 
+# Task to research similar videos on YouTube
 research_video_ideas_task:
   description: >
+    # Describes the purpose of the task: to find similar videos on YouTube
     Conduct research on YouTube to identify similar videos based on each video idea's title.
     For each generated video idea, search YouTube and gather details on comparable videos,
     including the title, URL, and view count of each related video.
 
+    # Example input to illustrate the type of video ideas processed
     Input Example:
     [
       [
@@ -105,9 +123,11 @@ research_video_ideas_task:
       ]
     ]
 
+    # Instruction to perform research based on the video title
     Research on YouTube for this video title and collect information about similar videos.
 
   expected_output: >
+    # Describes the expected output format
     Enrich each video idea with a "research" field that includes an array of relevant YouTube videos
     in the following format:
 
@@ -115,6 +135,7 @@ research_video_ideas_task:
     - url: Direct link to the similar video.
     - view_count: View count of the similar video.
 
+    # Example output to illustrate the expected result
     Example Output:
     [
       [
@@ -131,14 +152,18 @@ research_video_ideas_task:
         ]
       ]
     ]
+  # Specifies the agent responsible for this task
   agent: research_agent
 
+# Task to score video ideas based on research data
 score_video_ideas_task:
   description: >
+    # Describes the purpose of the task: to assign a score to video ideas
     Assign a score between 1 and 10 to each video idea based on the existing research data.
     Videos with high view counts in the research data should receive a higher score, indicating
     a strong market interest, while ideas with low view counts should score lower.
 
+    # Example input to illustrate the type of video ideas processed
     Input Example:
     [
       [
@@ -156,12 +181,15 @@ score_video_ideas_task:
       ]
     ]
 
+    # Instruction to calculate a score based on view count metrics
     Calculate a score based on view count metrics and add it to each video idea.
 
   expected_output: >
+    # Describes the expected output format
     Each video idea should now include:
     - score: A value between 1 and 10 representing the potential popularity of the idea.
 
+    # Example output to illustrate the expected result
     Example Output:
     [
       [
@@ -179,4 +207,5 @@ score_video_ideas_task:
         ]
       ]
     ]
+  # Specifies the agent responsible for this task
   agent: scoring_agent

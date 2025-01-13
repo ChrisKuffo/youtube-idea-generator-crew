@@ -1,0 +1,52 @@
+{
+  "overview": "The YouTube Idea Generator Crew is a Python-based project designed to generate ideas for YouTube videos. The project consists of several components, including a crew module, a main module, and various tools.",
+  "docs": [
+    {
+      "title": "Comprehensive Overview",
+      "description": "This document provides a high-level overview of the YouTube Idea Generator Crew project, including its purpose, components, and functionality.",
+      "prerequisites": "None",
+      "examples": [],
+      "goal": "To understand the project's overall architecture and purpose."
+    },
+    {
+      "title": "System Architecture and Key Design Decisions",
+      "description": "This document delves into the project's system architecture, including the modular design, object-oriented programming principles, and dependency injection. It also discusses key design decisions and their rationale.",
+      "prerequisites": "Basic understanding of software architecture and design patterns",
+      "examples": [
+        "Modular architecture example",
+        "Dependency injection example"
+      ],
+      "goal": "To understand the project's technical design and architecture."
+    },
+    {
+      "title": "Core Workflows and Data Flows",
+      "description": "This document explains the core workflows and data flows within the project, including the crew module's idea generation process, the main module's entry point, and the tools module's custom tools.",
+      "prerequisites": "Understanding of the project's components and functionality",
+      "examples": [
+        "Idea generation workflow example",
+        "Custom tool usage example"
+      ],
+      "goal": "To understand how the project's components interact and process data."
+    },
+    {
+      "title": "High-Level Component Interactions",
+      "description": "This document provides a high-level overview of how the project's components interact with each other, including the main module's interaction with the crew module and the tools module.",
+      "prerequisites": "Understanding of the project's components and functionality",
+      "examples": [
+        "Main module and crew module interaction example",
+        "Tools module usage example"
+      ],
+      "goal": "To understand how the project's components work together to achieve the overall goal."
+    },
+    {
+      "title": "Getting Started Guide",
+      "description": "This document provides a step-by-step guide on how to get started with the YouTube Idea Generator Crew project, including installation, setup, and basic usage.",
+      "prerequisites": "None",
+      "examples": [
+        "Installation example",
+        "Basic usage example"
+      ],
+      "goal": "To enable users to quickly get started with the project and begin generating ideas for YouTube videos."
+    }
+  ]
+}
